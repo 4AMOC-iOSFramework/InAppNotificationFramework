@@ -17,7 +17,6 @@ extension Int {
 }
 
 
-
 enum InAppNotificationAnimation: String {
     case left = "left"
     case right = "right"

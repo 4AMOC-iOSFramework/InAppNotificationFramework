@@ -3,7 +3,7 @@ lane :beta do
   if git_branch() == "develop"
     print("Last git Tag is")
     print(last_git_tag)
-    #funky_deploy
+    beta_deploy
   end
 end
 

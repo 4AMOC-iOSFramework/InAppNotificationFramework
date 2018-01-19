@@ -14,5 +14,8 @@ notifications:
     on_failure: always
 before_install:
   - gem install bundler
-  - bundle install
-script: bundle exec fastlane funky
+  - brew update
+  - bundle install && brew bundle
+  #- bundle install
+
+script: bundle exec fastlane beta

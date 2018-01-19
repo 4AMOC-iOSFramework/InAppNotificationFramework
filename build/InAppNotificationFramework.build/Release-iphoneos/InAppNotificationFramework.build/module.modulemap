@@ -1,0 +1,11 @@
+framework module InAppNotificationFramework {
+  umbrella header "InAppNotificationFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module InAppNotificationFramework.Swift {
+    header "InAppNotificationFramework-Swift.h"
+    requires objc
+}

@@ -1,0 +1,8 @@
+version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
+options: "be5fa37737bc426e14d48621f76423b9"
+build_time: [1516391068, 914358000]
+inputs:
+  "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/InAppNotificationFramework/InAppNotification.swift": [9223372036, 854775807]
+  "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/InAppNotificationFramework/NotificationData.swift": [9223372036, 854775807]
+  "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/InAppNotificationFramework/NotificationView.swift": [9223372036, 854775807]
+  "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/InAppNotificationFramework/UtilityNotification.swift": [9223372036, 854775807]

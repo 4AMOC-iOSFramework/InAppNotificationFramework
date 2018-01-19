@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF030A7520129C1800710464 /* InAppNotificationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BF030A7420129C1800710464 /* InAppNotificationFramework.h */; };
 		ED224CC7200F865D00EFBC1F /* InAppNotificationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED224CBD200F865D00EFBC1F /* InAppNotificationFramework.framework */; };
 		ED224CCC200F865D00EFBC1F /* InAppNotificationFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED224CCB200F865D00EFBC1F /* InAppNotificationFrameworkTests.swift */; };
-		ED224CCE200F865D00EFBC1F /* InAppNotificationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = ED224CC0200F865D00EFBC1F /* InAppNotificationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED224CD8200F86ED00EFBC1F /* InAppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED224CD7200F86ED00EFBC1F /* InAppNotification.swift */; };
 		ED224CDA200F86FB00EFBC1F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED224CD9200F86FB00EFBC1F /* NotificationView.swift */; };
 		ED224CDC200F870300EFBC1F /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED224CDB200F870300EFBC1F /* NotificationData.swift */; };
@@ -27,8 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF030A7420129C1800710464 /* InAppNotificationFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppNotificationFramework.h; sourceTree = "<group>"; };
 		ED224CBD200F865D00EFBC1F /* InAppNotificationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InAppNotificationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED224CC0200F865D00EFBC1F /* InAppNotificationFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppNotificationFramework.h; sourceTree = "<group>"; };
 		ED224CC1200F865D00EFBC1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED224CC6200F865D00EFBC1F /* InAppNotificationFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InAppNotificationFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED224CCB200F865D00EFBC1F /* InAppNotificationFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNotificationFrameworkTests.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		ED224CBF200F865D00EFBC1F /* InAppNotificationFramework */ = {
 			isa = PBXGroup;
 			children = (
-				ED224CC0200F865D00EFBC1F /* InAppNotificationFramework.h */,
+				BF030A7420129C1800710464 /* InAppNotificationFramework.h */,
 				ED224CD7200F86ED00EFBC1F /* InAppNotification.swift */,
 				ED224CD9200F86FB00EFBC1F /* NotificationView.swift */,
 				ED224CDB200F870300EFBC1F /* NotificationData.swift */,
@@ -105,7 +105,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED224CCE200F865D00EFBC1F /* InAppNotificationFramework.h in Headers */,
+				BF030A7520129C1800710464 /* InAppNotificationFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

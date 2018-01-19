@@ -7,10 +7,10 @@
 //
 
 import XCTest
-@testable import InAppNotificationFramework
+//@testable import InAppNotificationFramework
 
 class InAppNotificationFrameworkTests: XCTestCase {
-    
+    /*
     func testZero(){
         XCTAssertEqual(0.isPair, true)
     }
@@ -34,5 +34,5 @@ class InAppNotificationFrameworkTests: XCTestCase {
     func testNeg2(){
         XCTAssertEqual((-2).isPair, true)
     }
-    
+    */
 }

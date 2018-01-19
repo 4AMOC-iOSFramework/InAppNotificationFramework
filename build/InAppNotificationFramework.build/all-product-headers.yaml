@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/build/Release-iphoneos/InAppNotificationFramework.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "InAppNotificationFramework-Swift.h",
+          'external-contents': "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/build/Release-iphoneos/InAppNotificationFramework.framework/Headers/InAppNotificationFramework-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "InAppNotificationFramework.h",
+          'external-contents': "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/InAppNotificationFramework/InAppNotificationFramework.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/build/Release-iphoneos/InAppNotificationFramework.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/school/Desktop/4AMOC/CI/InAppNotificationFramework/build/InAppNotificationFramework.build/Release-iphoneos/InAppNotificationFramework.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
