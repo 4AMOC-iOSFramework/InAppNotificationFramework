@@ -1,12 +1,12 @@
-lane :funky do
+lane :beta do
   #scan()
   if git_branch() == "develop"
     #print("Hello World")
-    funky_deploy
+    #funky_deploy
   end
 end
 
-lane :funky_deploy do
+lane :beta_deploy do
   pod_lib_lint
   pod_push
 end
