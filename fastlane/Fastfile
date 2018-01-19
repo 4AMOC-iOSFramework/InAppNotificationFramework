@@ -1,7 +1,8 @@
 lane :beta do
   #scan()
   if git_branch() == "develop"
-    #print("Hello World")
+    print("Last git Tag is")
+    print(last_git_tag)
     #funky_deploy
   end
 end
