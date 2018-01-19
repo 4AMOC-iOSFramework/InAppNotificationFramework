@@ -1,0 +1,12 @@
+lane :funky do
+  #scan()
+  if git_branch() == "develop"
+    #print("Hello World")
+    funky_deploy
+  end
+end
+
+lane :funky_deploy do
+  pod_lib_lint
+  pod_push
+end
