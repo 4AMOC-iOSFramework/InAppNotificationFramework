@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF030A7520129C1800710464 /* InAppNotificationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BF030A7420129C1800710464 /* InAppNotificationFramework.h */; };
+		BF030A772013942B00710464 /* InAppNotificationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BF030A7420129C1800710464 /* InAppNotificationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED224CC7200F865D00EFBC1F /* InAppNotificationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED224CBD200F865D00EFBC1F /* InAppNotificationFramework.framework */; };
 		ED224CCC200F865D00EFBC1F /* InAppNotificationFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED224CCB200F865D00EFBC1F /* InAppNotificationFrameworkTests.swift */; };
 		ED224CD8200F86ED00EFBC1F /* InAppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED224CD7200F86ED00EFBC1F /* InAppNotification.swift */; };
@@ -105,7 +105,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF030A7520129C1800710464 /* InAppNotificationFramework.h in Headers */,
+				BF030A772013942B00710464 /* InAppNotificationFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
