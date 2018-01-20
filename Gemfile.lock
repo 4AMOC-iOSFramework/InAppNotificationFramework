@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/flori/json.git
+  revision: 7f4cfd853f2c919d854fb95548a19980feff17e8
+  branch: v1.8
+  specs:
+    json (1.8.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -122,7 +129,6 @@ GEM
     httpclient (2.8.3)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
-    json (1.8.3)
     jwt (2.1.0)
     little-plugger (1.1.4)
     logging (2.2.2)
@@ -191,6 +197,7 @@ PLATFORMS
 DEPENDENCIES
   cocoapods
   fastlane
+  json!
 
 BUNDLED WITH
    1.16.0
