@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="00: git_branch" time="0.026378">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="0.879592">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.378226">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: add_git_tag" time="0.020254">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: push_git_tags" time="2.345681">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: get_version_number" time="0.389804">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: version_bump_podspec" time="0.003569">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: Switch to beta_deploy lane" time="0.001308">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: pod_lib_lint" time="9.812406">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: pod_push" time="46.788473">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: slack" time="0.508841">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
