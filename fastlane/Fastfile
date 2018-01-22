@@ -10,7 +10,9 @@ lane :beta do |options|
     push_git_tags
     version_bump_podspec(path: 'InAppNotificationFramework.podspec',
       version_number: get_version_number)
+
     beta_deploy
+
   end
 
 end
