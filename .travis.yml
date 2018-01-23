@@ -18,8 +18,10 @@ notifications:
     rooms:
       secure: GurpyBJVZzXNqYX6lhz383uYgZ2HR2PaTjql6GPvtv54behf4mpffhQs3NHF5f8hpqmL+lYCQ6YddixCXN/nr9ZxuA1XA69SyaycUcU93qxP9MEF50BNzqxzNpBgJYcppJlM2eU1S2aeTtGYn+9sK0xPFN9pDtKyhMF1q77d8glkhlf63WJK1fq9RRc5VkrG4Urui89Yst+GB3Q2rXNvVtieZupeulgTfQeTygyVrPQyAEbDg/+Hx1rFavN0jCZ0vpkYARRDJ+jWqrSXaZ6v8ZSeKSUO9l5/ruTOKxtjCOxtS68Xy9h7TnT/8i/GI6JjsDDTz7311qfYQtz0crdnyWp5kBKs4sa9oYiWXYDaQlajx9uTEIN2thtdJ8g7b2zxhiDY3cwW/qviOh00DRw5GY2fjtCW384IcIZjvhctGfBxyLHBv7IFn3o5KmdR9+yqCqVof0+3Hxfna6u+szPP+cCpGNbK7yOgAIOk11sRK1HmGEssURY2Jg1TvM5yqBDczF040J3S3yUtwcQFN99tTgRmcTjFYzh04sHwOawECn6xn5uiTDSR3qlIK/tNV/Ad+nwb2dm5S3z/0pcc2A+krDZWjts4n+4MZPbYR9a/K0JuQjQTsGslAozdhXzcVfHfuAfJCl6xFLEAgvbn2sytjB3YF5ChjRFWjZkWInBmoYY=
 before_install:
-- gem install bundler
-- bundle install
+  - gem install bundler
+  - bundle install
+  - composer config --global github-oauth.github.com "$GITHUB_TOKEN"
+
 script: bundle exec fastlane beta
 env:
   global:
