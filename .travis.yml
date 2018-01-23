@@ -20,7 +20,7 @@ notifications:
 before_install:
 - gem install bundler
 - bundle install
-- composer config --global github-oauth.github.com "$GITHUB_TOKEN"
+
 deploy:
   provider: releases
   apikey:
