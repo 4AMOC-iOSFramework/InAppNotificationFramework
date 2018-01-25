@@ -23,6 +23,7 @@ before_install:
 - bundle install
 
 deploy:
+<<<<<<< HEAD
   provider: releases
   skip-cleanup: true
   github-token: "$GITHUB_TOKEN"
@@ -34,4 +35,18 @@ deploy:
 env:
   global:
     secure: sZotmEnmoSCTHv8lRyxMuoGVq/FADJ/KnG/qNtY8FGO2rBCA/LRUjI9Pi9S1ZjvSMjwQQEzvdij88JBnGc3VhDiYa17icjnDrKuW2zDM1PNzI1lhJNTwFS56sfTZZZj1oblVY0UG+BWYQmphjV/vcXaz+ce483ozPpeoMnx+Js/r8tUa4Rce+5Rlg/6uxRloin6x30nKAkhAQLIeEqG4VljI6P9jwiWy65DW6ZdgTyN0CGhdH7tGgVPihAt8TH4O2slFNbsRQvdJ5PUZmKF/CB12tvyEr/PT2XXReD3XKnYcetujh++WftTq42Auunj1sEDpJT4ecN28X7j05IUS/O+k75g5zDxnWF9Qdg6RvXSKa4glA2G+4BXrRy48a5dIMAFqKXzl1LsOKacMKmSyN4FBAmQ+LHyVtVSU/BY2ImTjt5GBIfLjAefrsO4J+3jQJXGIvD+3N1/J7TkmFKSfGjuEoOfeLkRmJm4dHWwEkinlubIbW78gPQHSGc2HXaKSy6me5lx7msFn31rmTk1h/La1dzHuCjikxrhJHX9D1d+0vEEbsllPM4ZMF/miwnkyqBMqd6n1QFdv50m7HPjkw+k60EZ+mD2q3LHg/4J6unfXbKPfm9m/dUazZqlxx/r7GFEL9xI2W6038ifsfs0Emvkp7xKUmn77zrSUi/WPkaM=
+=======
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+    tags: true
+
+env:
+  global:
+    secure: sZotmEnmoSCTHv8lRyxMuoGVq/FADJ/KnG/qNtY8FGO2rBCA/LRUjI9Pi9S1ZjvSMjwQQEzvdij88JBnGc3VhDiYa17icjnDrKuW2zDM1PNzI1lhJNTwFS56sfTZZZj1oblVY0UG+BWYQmphjV/vcXaz+ce483ozPpeoMnx+Js/r8tUa4Rce+5Rlg/6uxRloin6x30nKAkhAQLIeEqG4VljI6P9jwiWy65DW6ZdgTyN0CGhdH7tGgVPihAt8TH4O2slFNbsRQvdJ5PUZmKF/CB12tvyEr/PT2XXReD3XKnYcetujh++WftTq42Auunj1sEDpJT4ecN28X7j05IUS/O+k75g5zDxnWF9Qdg6RvXSKa4glA2G+4BXrRy48a5dIMAFqKXzl1LsOKacMKmSyN4FBAmQ+LHyVtVSU/BY2ImTjt5GBIfLjAefrsO4J+3jQJXGIvD+3N1/J7TkmFKSfGjuEoOfeLkRmJm4dHWwEkinlubIbW78gPQHSGc2HXaKSy6me5lx7msFn31rmTk1h/La1dzHuCjikxrhJHX9D1d+0vEEbsllPM4ZMF/miwnkyqBMqd6n1QFdv50m7HPjkw+k60EZ+mD2q3LHg/4J6unfXbKPfm9m/dUazZqlxx/r7GFEL9xI2W6038ifsfs0Emvkp7xKUmn77zrSUi/WPkaM=
+
+>>>>>>> 636b280... set travis to push to git hub pages
 script: bundle exec fastlane beta
