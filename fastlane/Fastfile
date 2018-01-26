@@ -6,8 +6,6 @@ lane :beta do |options|
   #scan()
   if git_branch() == "master"
     increment_version_number(bump_type: 'patch')
-    increment_version_number(bump_type: 'patch')
-    increment_version_number(bump_type: 'patch')
     add_git_tag(tag: get_version_number)
     push_git_tags
     version_bump_podspec(path: 'InAppNotificationFramework.podspec',
