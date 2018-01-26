@@ -20,11 +20,16 @@ notifications:
 before_install:
 - gem install bundler
 - bundle install
+before_deploy:
+- git remote set-url origin https://$GH_TOKEN:x-oauth-basic@github.com/4AMOC-iOSFramework/InAppNotificationFramework.git
 deploy:
   provider: releases
   skip_cleanup: true
-  github-token: $GH_TOKEN
+  github-token: "$GH_TOKEN"
   on:
     tags: true
   verbose: true
 script: bundle exec fastlane beta
+env:
+  global:
+    secure: tIIqNBDNtyJnPsdI/7Msp4l8LDepIykCGE9x+PAnZyUriatyCdD4cSChbWxFY3I665eIxXBhN4MpnJYcxmlXJmd2Ejmur0p26ZBEGqH0A+QAMm+SfBRfPo/nOyf6ir/dNwncPagTjimBfLn+MGzPGVY/6LU1l82ihS9l8E8Jko+bJtKT7qARDqWaNvVBl8BKeeljjSMd3ZhyHbvOHXTxTT4e6bvZ9XJ8J6kCqoINUww00NWFU8JqDOdhZDWCw3vgokJ3ge3tunE8nKrTwJJNQUK0sPb4lmZsoCCNosYx9ex5Ni6LJlnGdz//oZmrXD0NsNC5/udenIMaaMew7FhwSFG4ubmLEG1hXwEPaLdbN2JTxP5oveX4A1D1Okq94bD8GH3+FJsZXgjIhiENZuKacdIa8PImQvXdjBj77V5AlIVkKpAHBw9ajflalLkJI7nm/PJvxhBK25aIfc+eczfM1aDSPFDBS+BMfn6wwS9NfhmZg4IOCVCm5MDn4jakdgio4HmJnzW/BePpb4mfpEmOICsItRj2/Iw8mcZ+U3RuB9w9WrzVjBAcRIuOiYekPnK5Ty6UiyBYEJerlncQGcKJPnXf+28idvocMdQOSWk5wbCWjdhTthPBVXieLeDbXPT4YsiPCx2AacfS/aX3jVuicecvyuIdxhWzJMFGauJESVg=
