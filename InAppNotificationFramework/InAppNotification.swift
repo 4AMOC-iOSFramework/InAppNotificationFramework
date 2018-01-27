@@ -16,7 +16,7 @@ extension Int {
     }
 }
 
-
+/// Animations available for the notification
 enum InAppNotificationAnimation: String {
     case left = "left"
     case right = "right"
@@ -49,6 +49,9 @@ class InAppNotification: NSObject {
         handleQueue()
     }
     
+    /**
+     Handles a NotificationData array by getting the first item and remove it from the array
+    */
     func handleQueue(){
         
         if let notif = notificationStack.first {
@@ -59,6 +62,9 @@ class InAppNotification: NSObject {
     
     var notificationView: NotificationView?
     
+    /**
+     Displays the notifiation from the data contained in the NotificationData object
+     */
     private func displayNotification(notification: NotificationData){
         
         if !isNotificationVisible {
@@ -84,6 +90,9 @@ class InAppNotification: NSObject {
         
     }
     
+    /**
+     Displays the notifiation from the data contained in the NotificationData object with the animation defined in that object
+     */
     private func showWithAnimation(notification: NotificationData, window: UIWindow, notificationView: NotificationView){
         
         switch notification.animationStyle {
@@ -117,7 +126,9 @@ extension InAppNotification: NotificationViewDelegate{
     func notificationTapped(notification: NotificationData) {
         NotificationCenter.default.post(name: Notification.Name("notificationTapped"), object: notification)
     }
-    
+    /**
+     Dismiss the notification view and the data asssociated
+    */
     func notificationDismissed() {
         isNotificationVisible = false
         notificationView?.removeFromSuperview()

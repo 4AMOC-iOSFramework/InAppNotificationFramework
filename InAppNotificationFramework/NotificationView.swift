@@ -13,9 +13,12 @@ protocol NotificationViewDelegate: class {
     func notificationTapped(notification: NotificationData)
 }
 
+/**
+ Creation of the notification view
+ */
 class NotificationView: UIView {
     
-    
+    //Get the data to display in the notifation view
     var notification = NotificationData() {
         didSet{
             
@@ -129,6 +132,9 @@ class NotificationView: UIView {
         setupLayout()
     }
     
+    /**
+     Initialize the view which will contain the data to display and gesture available on the notification view
+    */
     func initialize(){
         
         panGesture.addTarget(self, action: #selector(panGestureHandler))
