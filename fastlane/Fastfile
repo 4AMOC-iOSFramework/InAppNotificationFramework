@@ -3,16 +3,25 @@ before_all do
 end
 
 lane :beta do |options|
+  #print('\nCurrent version number is\n')
+  #increment_version_number(version_number: "1.0.0")
+  #print('\n',get_version_number,'\n')
+
+  #set_github_release(
+  #  repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
+  #  api_token: ENV["GITHUB_TOKEN"],
+  #  tag_name: get_version_number,
+  #  commitish: 'master'
+  #)
   #scan()
   if git_branch() == "master"
     increment_version_number(bump_type: 'patch')
-    #add_git_tag(tag: get_version_number)
-    #push_git_tags
+    add_git_tag(tag: get_version_number)
+    push_git_tags
     version_bump_podspec(path: 'InAppNotificationFramework.podspec',
       version_number: get_version_number)
     beta_deploy
   end
-
 end
 
 lane :beta_deploy do
