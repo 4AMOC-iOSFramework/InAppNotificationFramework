@@ -37,9 +37,9 @@ lane :beta_deploy do
   #pod_push
 end
 
-#after_all do|beta, mesg|
-#  slack(message:"beta lane successfully ran")
-#end
+after_all do|beta, mesg|
+  slack(message:"beta lane successfully ran")
+end
 
 error do|beta, exception|
   slack(message: exception.message, success: false)
