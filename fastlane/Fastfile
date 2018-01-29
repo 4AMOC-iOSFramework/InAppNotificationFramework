@@ -15,6 +15,7 @@ lane :beta do |options|
   #)
   #scan()
   if git_branch() == "master"
+    login_to_git
     increment_version_number(bump_type: 'patch')
     add_git_tag(tag: get_version_number)
     push_git_tags
@@ -29,6 +30,14 @@ lane :beta_deploy do
   pod_push
 end
 
+lane :login_to_git do
+  username = ENV["GH_USERNAME"]
+  pwd = ENV["GH_PWD"]
+  if  username and pwd
+    sh("bundle exec fastlane-credentials add --username #{username} --password #{pwd}")
+end
+
+end
 after_all do|beta, mesg|
   slack(message:"beta lane successfully ran")
 end
