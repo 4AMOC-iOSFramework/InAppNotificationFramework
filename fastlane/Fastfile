@@ -1,5 +1,9 @@
-lane :beta do |options|
+before_all do
+  ensure_git_status_clean
+end
 
+
+lane :beta do |options|
   #print('\nCurrent version number is\n')
   #increment_version_number(version_number: "1.0.0")
   #print('\n',get_version_number,'\n')
@@ -11,15 +15,16 @@ lane :beta do |options|
   #  commitish: 'master'
   #)
   #scan()
+
   if git_branch() == "master"
     #login_to_git
     increment_version_number(bump_type: 'patch')
     add_git_tag(tag: get_version_number)
-    push_git_tags
+    #push_git_tags
+    push_to_git_remote
     version_bump_podspec(path: 'InAppNotificationFramework.podspec',
       version_number: get_version_number)
     beta_deploy
-    #push_to_git_remote
   end
 end
 
