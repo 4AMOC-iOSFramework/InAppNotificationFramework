@@ -25,11 +25,6 @@ fastlane beta
 fastlane beta_deploy
 ```
 
-### login_to_git
-```
-fastlane login_to_git
-```
-
 
 ----
 
