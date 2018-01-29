@@ -12,11 +12,17 @@ lane :beta do |options|
     #increment_build_number
     #add_git_tag(tag: get_version_number)
     #push_git_tags
+
+    increment_version_number(bump_type: 'patch')
+
     set_github_release(
       repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
       api_token: ENV["GITHUB_API_TOKEN"],
-      tag_name: increment_version_number(bump_type: 'patch'),
-      commitish: 'master')
+      tag_name: get_version_number,
+      commitish: 'master',
+      name:get_version_number,
+      description: 'Testing Continuous delivery'
+    )
     #push_to_git_remote
     version_bump_podspec(path: 'InAppNotificationFramework.podspec',
       version_number: get_version_number)
