@@ -22,8 +22,8 @@ before_install:
   -in .netrc.enc -out .netrc -d
 - gem install bundler
 - bundle install
-before_deploy:
-- git remote set-url origin https://$GH_TOKEN:x-oauth-basic@github.com/4AMOC-iOSFramework/InAppNotificationFramework.git
+#before_deploy:
+#- git remote set-url origin https://$GH_TOKEN:x-oauth-basic@github.com/4AMOC-iOSFramework/InAppNotificationFramework.git
 deploy:
   provider: releases
   skip_cleanup: true
