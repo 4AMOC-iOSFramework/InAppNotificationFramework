@@ -20,8 +20,6 @@ notifications:
 before_install:
 - openssl aes-256-cbc -K $encrypted_c0bdca35e213_key -iv $encrypted_c0bdca35e213_iv
   -in .netrc.enc -out .netrc -d
-- openssl aes-256-cbc -K $encrypted_b4338aa57ceb_key -iv $encrypted_b4338aa57ceb_iv
-  -in .netrc.enc -out .netrc -d
 - gem install bundler
 - bundle install
 deploy:
