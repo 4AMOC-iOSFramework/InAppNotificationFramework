@@ -5,17 +5,62 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: git_branch" time="0.033509">
+      <testcase classname="fastlane.lanes" name="00: git_branch" time="0.034723">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: setup_travis" time="0.002499">
+      <testcase classname="fastlane.lanes" name="01: setup_travis" time="0.002558">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: slack" time="0.269828">
+      <testcase classname="fastlane.lanes" name="02: increment_build_number" time="2.832968">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: increment_version_number" time="1.898646">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: get_version_number" time="0.951479">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: add_git_tag" time="0.015692">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: push_git_tags" time="2.667718">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: get_version_number" time="0.955866">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: version_bump_podspec" time="0.004229">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: Switch to beta_deploy lane" time="0.001272">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: pod_lib_lint" time="10.907225">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: slack" time="0.5162">
         
       </testcase>
     

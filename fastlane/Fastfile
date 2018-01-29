@@ -14,6 +14,7 @@ lane :beta do |options|
   if git_branch() == "master"
     setup_travis
     #login_to_git
+    increment_build_number
     increment_version_number(bump_type: 'patch')
     add_git_tag(tag: get_version_number)
     push_git_tags
@@ -26,7 +27,7 @@ end
 
 lane :beta_deploy do
   pod_lib_lint
-  pod_push
+  #pod_push
 end
 
 after_all do|beta, mesg|
