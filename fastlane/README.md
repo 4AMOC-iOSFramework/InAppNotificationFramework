@@ -20,6 +20,11 @@ or alternatively using `brew cask install fastlane`
 fastlane beta
 ```
 
+### test
+```
+fastlane test
+```
+
 ### beta_deploy
 ```
 fastlane beta_deploy
