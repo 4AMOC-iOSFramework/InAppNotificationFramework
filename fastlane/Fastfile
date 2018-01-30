@@ -11,7 +11,6 @@ end
 
 lane :new_github_release do |options|
   increment_version_number(bump_type: options[:bump_type])
-  increment_version_number(bump_type: options[:bump_type])
   version_bump_podspec(path: 'InAppNotificationFramework.podspec',
     version_number: get_version_number)
   set_github_release(
@@ -31,7 +30,7 @@ lane :beta_deploy do
 end
 
 after_all do|_, mesg|
-  slack
+  slack(message: msg.to_s, success:true)
 end
 
 error do|beta, exception|
