@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary = 'Gather, stack, display, app notifications as a single list'
   s.homepage = 'https://github.com/4AMOC-iOSFramework/InAppNotificationFramework'
   s.authors = { '4A MOC Dream Team' => 'fodeguipro@gmail.com' }
-  s.source = { :git => 'https://github.com/4AMOC-iOSFramework/InAppNotificationFramework.git', :tag => '1.0.9' }
+  s.source = { :git => 'https://github.com/4AMOC-iOSFramework/InAppNotificationFramework.git', :tag => s.version }
 
   s.ios.deployment_target = '9.0'
   s.source_files = 'InAppNotificationFramework/*.swift'
