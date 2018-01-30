@@ -3,7 +3,7 @@ lane :to_ci do |options|
   pod_lib_lint
   if git_branch() == "master"
     if options[:release] and options[:bump_type]
-        new_github_release(options[:bump_type])
+        new_github_release(bump_type: options[:bump_type])
         pod_push
     end
   end
