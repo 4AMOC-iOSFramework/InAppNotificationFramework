@@ -31,8 +31,8 @@ deploy:
     tags: true
   verbose: true
 
-#script: bundle exec fastlane to_ci
-script: bundle exec fastlane to_ci release:true bump_type:patch
+script: bundle exec fastlane to_ci
+#script: bundle exec fastlane to_ci release:true bump_type:patch
 
 env:
   global:
