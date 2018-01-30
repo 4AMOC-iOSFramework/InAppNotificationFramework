@@ -10,7 +10,7 @@ lane :to_ci do |options|
 end
 
 lane :new_github_release do |options|
-  increment_version_number(options[:bump_type])
+  increment_version_number(bump_type: options[:bump_type])
   set_github_release(
     repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
     api_token: ENV["GITHUB_API_TOKEN"],
