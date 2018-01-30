@@ -29,8 +29,8 @@ lane :beta_deploy do
   pod_push
 end
 
-after_all do|_, mesg|
-  slack(message: msg.to_s, success:true)
+after_all do|to_ci, options|
+  slack(success:true)
 end
 
 error do|beta, exception|
