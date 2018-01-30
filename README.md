@@ -6,12 +6,12 @@
 [![GitHub language count](https://img.shields.io/github/languages/count/badges/InAppNotificationFramework.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/p/InAppNotificationFramework.svg)]()
 
-InAppNotificationFramework is library written in Swift which handle the creation of a notification inApp.
+InAppNotificationFramework is library written in Swift 4 which handle the creation of a notification inside an iOS application.
 
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [FAQ](#faq)
+- [Utilisation](#utilisation)
 - [Credits](#credits)
 
 ## Features
@@ -82,8 +82,53 @@ $ git submodule add https://github.com/4AMOC-iOSFramework/InAppNotificationFrame
 
 - Select the top `InAppNotificationFramework.framework` for iOS and the bottom one for OS X.
 
-> You can verify which one you selected by inspecting the build log for your project. The build target for `Alamofire` will be listed as either `Alamofire iOS`, `Alamofire macOS`, `Alamofire tvOS` or `Alamofire watchOS`.
 
 - And that's it!
 
 > The `InAppNotificationFramework.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
+
+## Utilisation
+First you'll need to create one or many Notification Data object.
+This object contains the notifications data like:
+Title,
+Detail,
+Thumbnail,
+How many second it will be shown
+
+```swift
+let notif1 = NotificationData()
+notif1.id = "id4342"
+notif1.delay = 5
+notif1.title = "New message from Henri GIL"
+notif1.message = "Le Lorem Ipsum est simplement du faux texte employé dans la"
+notif1.thumbnailUrl = "thumb"
+notif1.contentImage = "rotortrade_logo4"
+notif1.animationStyle = .top
+```
+
+Then you'll just need to add the notification to the queue with the following code:
+
+```swift
+InAppNotification.shared.addNotification(notification: notif1)
+```
+
+In order to get the callback when the user tap on your notification and get which notifications has been tapped, you'll need to add an observer to your controller.
+
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(notificationsHandler), name: Notification.Name("notificationTapped") , object: nil)
+```
+The NotificationData object will be in the Notification.object property. Just cast it and you'll be able to get which notification has been tapped.
+
+```swift
+@objc func notificationsHandler(notif: Notification) {
+
+if let notification = notif.object as? NotificationData {
+print(notification)
+}
+}
+```
+## Credits
+
+* **Henri Gil** - [hgxl](https://github.com/hgxl)
+* **Fodé Guirassy** - [fodeguirassy](https://github.com/fodeguirassy)
+* **Ismaël Diallo** - [ismadia09](https://github.com/ismadia09)

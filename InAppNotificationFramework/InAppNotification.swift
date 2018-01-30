@@ -63,7 +63,7 @@ class InAppNotification: NSObject {
     var notificationView: NotificationView?
     
     /**
-     Displays the notifiation from the data contained in the NotificationData object
+     Displays the notifiation from the data contained in the NotificationData object and displays it the UIwindow
      */
     private func displayNotification(notification: NotificationData){
         
@@ -123,6 +123,10 @@ class InAppNotification: NSObject {
 }
 
 extension InAppNotification: NotificationViewDelegate{
+    
+    /**
+     Send the info ""notificationTapped" to the NotificationCenter
+     */
     func notificationTapped(notification: NotificationData) {
         NotificationCenter.default.post(name: Notification.Name("notificationTapped"), object: notification)
     }
