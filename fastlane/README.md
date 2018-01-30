@@ -15,14 +15,14 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
-### beta
+### to_ci
 ```
-fastlane beta
+fastlane to_ci
 ```
 
-### test
+### new_github_release
 ```
-fastlane test
+fastlane new_github_release
 ```
 
 ### beta_deploy

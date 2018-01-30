@@ -1,45 +1,35 @@
-lane :beta do |options|
-  #print('\nCurrent version number is\n')
-  #increment_version_number(version_number: "1.0.0")
-  #print('\n',get_version_number,'\n')
-
-
-  #)
-  #scan()
+lane :to_ci do |options|
+  #scan
+  pod_lib_lint
   if git_branch() == "master"
-    #setup_travis
-    #login_to_git
-    #increment_build_number
-    #add_git_tag(tag: get_version_number)
-    #push_git_tags
-
-    increment_version_number(bump_type: 'patch')
-
-    set_github_release(
-      repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
-      api_token: ENV["GITHUB_API_TOKEN"],
-      tag_name: get_version_number,
-      commitish: 'master',
-      name:get_version_number,
-      description: 'Testing Continuous delivery'
-    )
-    #push_to_git_remote
-    version_bump_podspec(path: 'InAppNotificationFramework.podspec',
-      version_number: get_version_number)
-    beta_deploy
+    if options[:release] and options[:bump_type]
+        new_github_release(options[:bump_type])
+        pod_push
+    end
   end
 end
 
-lane :test do
-  print()
-end
-lane :beta_deploy do
-  pod_lib_lint
-  #pod_push
+lane :new_github_release do |options|
+  increment_version_number(options[:bump_type])
+  set_github_release(
+    repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
+    api_token: ENV["GITHUB_API_TOKEN"],
+    tag_name: get_version_number,
+    commitish: 'master',
+    name:get_version_number,
+    body: 'Testing Continuous delivery'
+  )
+  version_bump_podspec(path: 'InAppNotificationFramework.podspec',
+    version_number: get_version_number)
 end
 
-after_all do|beta, mesg|
-  slack(message:"beta lane successfully ran")
+lane :beta_deploy do
+  pod_lib_lint
+  pod_push
+end
+
+after_all do|_, mesg|
+  slack
 end
 
 error do|beta, exception|
