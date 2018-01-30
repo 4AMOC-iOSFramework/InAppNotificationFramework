@@ -7,14 +7,19 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/InAppNotificationFramework.svg)]()
 
 
-Easy to use InApp notification framework written in Swift
+Easy to use InApp notification framework written in Swift 4
 
 ## Getting Started
 
 
 ### Using
 
-First create one or many NotificationData object
+First you'll need to create one or many Notification Data object.
+This object contains the notifications data like:
+Title,
+Detail,
+Thumbnail,
+How many second it will be shown
 
 ```swift
 let notif1 = NotificationData()
@@ -27,11 +32,28 @@ notif1.contentImage = "rotortrade_logo4"
 notif1.animationStyle = .top
 ```
 
-Then just add the notification to the queue
+Then you'll just need to add the notification to the queue with the following code:
 
 ```swift
 InAppNotification.shared.addNotification(notification: notif1)
 ```
+
+In order to get the callback when the user tap on your notification and get which notifications has been tapped, you'll need to add an observer to your controller.
+
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(notificationsHandler), name: Notification.Name("notificationTapped") , object: nil)
+```
+The NotificationData object will be in the Notification.object property. Just cast it and you'll be able to get which notification has been tapped.
+
+```swift
+@objc func notificationsHandler(notif: Notification) {
+
+    if let notification = notif.object as? NotificationData {
+        print(notification)
+    }
+}
+```
+
 
 
 ### CocoaPods
