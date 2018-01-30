@@ -16,8 +16,7 @@ lane :new_github_release do |options|
     api_token: ENV["GITHUB_API_TOKEN"],
     tag_name: get_version_number,
     commitish: 'master',
-    name:get_version_number,
-    body: 'Testing Continuous delivery'
+    name:get_version_number
   )
   version_bump_podspec(path: 'InAppNotificationFramework.podspec',
     version_number: get_version_number)
