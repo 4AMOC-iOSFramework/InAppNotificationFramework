@@ -5,10 +5,8 @@ cache:
 - cocoapods
 branches:
   only:
-  - henriGil
-  - feat-commentaires
-  - develop
   - master
+  - /.*/
 notifications:
   email:
     recipients: "-fodeguipro@gmail.com -henri.m.gil@gmail.com -ismadia09@gmail.com"
