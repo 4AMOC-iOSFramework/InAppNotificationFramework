@@ -5,6 +5,7 @@ cache:
 - cocoapods
 branches:
   only:
+  - henriGil
   - feat-commentaires
   - develop
   - master
