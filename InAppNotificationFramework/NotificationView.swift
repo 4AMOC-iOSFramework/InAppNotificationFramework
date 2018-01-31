@@ -13,12 +13,9 @@ protocol NotificationViewDelegate: class {
     func notificationTapped(notification: NotificationData)
 }
 
-/**
- Creation of the notification view
- */
 class NotificationView: UIView {
     
-    //Get the data to display in the notifation view
+    
     var notification = NotificationData() {
         didSet{
             
@@ -90,7 +87,7 @@ class NotificationView: UIView {
         return v
     }()
     
-    let swipBarContainerView: UIView = {
+    let swipBarContenairView: UIView = {
         let v = UIView()
         v.backgroundColor = .clear
         v.translatesAutoresizingMaskIntoConstraints=false
@@ -132,20 +129,17 @@ class NotificationView: UIView {
         setupLayout()
     }
     
-    /**
-     Initialize the view which will contain the data to display and gesture available on the notification view
-    */
     func initialize(){
         
         panGesture.addTarget(self, action: #selector(panGestureHandler))
         panGesture.cancelsTouchesInView=true;
-        swipBarContainerView.addGestureRecognizer(panGesture)
+        swipBarContenairView.addGestureRecognizer(panGesture)
         
         tapGesture.addTarget(self, action: #selector(tapGestureHandler))
         tapGesture.cancelsTouchesInView = true
         notificationContent.addGestureRecognizer(tapGesture)
         
-        swipUpDismiss.addTarget(self, action: #selector(swipeGestureHandler))
+        swipUpDismiss.addTarget(self, action: #selector(swipGestureHandler))
         swipUpDismiss.direction = .up
         
         self.addGestureRecognizer(swipUpDismiss)
@@ -154,17 +148,14 @@ class NotificationView: UIView {
         notificationContent.addSubview(thumbnail)
         notificationContent.addSubview(titleLabel)
         notificationContent.addSubview(messageLabel)
-        notificationContent.addSubview(swipBarContainerView)
-        swipBarContainerView.addSubview(swipBarView)
+        notificationContent.addSubview(swipBarContenairView)
+        swipBarContenairView.addSubview(swipBarView)
         notificationContent.addSubview(contentImage)
     }
     
-    /**
-     Set up the notification Layout
-     */
     func setupLayout(){
         
-        swipBarTopConstraint = swipBarContainerView.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: -20)
+        swipBarTopConstraint = swipBarContenairView.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: -20)
         contentImageHeightConstraint = contentImage.heightAnchor.constraint(equalToConstant: 100)
         notificationContentTopConstraint = notificationContent.topAnchor.constraint(equalTo: self.topAnchor, constant: 5)
         NSLayoutConstraint.activate([
@@ -188,12 +179,12 @@ class NotificationView: UIView {
             messageLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
             
             swipBarTopConstraint!,
-            swipBarContainerView.centerXAnchor.constraint(equalTo: notificationContent.centerXAnchor),
-            swipBarContainerView.heightAnchor.constraint(equalToConstant: 40),
-            swipBarContainerView.widthAnchor.constraint(equalTo: notificationContent.widthAnchor),
+            swipBarContenairView.centerXAnchor.constraint(equalTo: notificationContent.centerXAnchor),
+            swipBarContenairView.heightAnchor.constraint(equalToConstant: 40),
+            swipBarContenairView.widthAnchor.constraint(equalTo: notificationContent.widthAnchor),
             
-            swipBarView.centerXAnchor.constraint(equalTo: swipBarContainerView.centerXAnchor),
-            swipBarView.bottomAnchor.constraint(equalTo: swipBarContainerView.bottomAnchor, constant: -4),
+            swipBarView.centerXAnchor.constraint(equalTo: swipBarContenairView.centerXAnchor),
+            swipBarView.bottomAnchor.constraint(equalTo: swipBarContenairView.bottomAnchor, constant: -4),
             swipBarView.widthAnchor.constraint(equalToConstant: 130),
             swipBarView.heightAnchor.constraint(equalToConstant: 10),
             
@@ -202,14 +193,11 @@ class NotificationView: UIView {
             contentImage.widthAnchor.constraint(equalTo: notificationContent.widthAnchor, multiplier: 0.9),
             contentImageHeightConstraint!,
             
-            notificationContent.bottomAnchor.constraint(equalTo: swipBarContainerView.bottomAnchor, constant: 0),
+            notificationContent.bottomAnchor.constraint(equalTo: swipBarContenairView.bottomAnchor, constant: 0),
             ])
         
     }
     
-    /**
-     Animate the notitication and call the delegate for the dismiss
-    */
     @objc func dismissNotification(){
         
         guard isDismissing == false else {return}
@@ -227,14 +215,11 @@ class NotificationView: UIView {
         }
     }
     
-
-    /**
-     Set image content from internet
-     */
+    
     func setImageContent(named: String){
         isImageContent = true
         contentImage.isHidden = false
-        swipBarContainerView.isHidden=false
+        swipBarContenairView.isHidden=false
         
         if isUrl(urlString: named){
             guard let url = URL(string: named) else {return}
@@ -255,9 +240,7 @@ class NotificationView: UIView {
     }
     
     
-    /**
-     Verifies if the notivication view isTapped to activate the gestures
-     */
+    
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if notificationContent.frame.contains(point) == true {
             print("tap real")
@@ -266,19 +249,17 @@ class NotificationView: UIView {
         
         return false
     }
-    
+
     func isUrl(urlString: String?) -> Bool {
-        if let urlString = urlString {
-            if let url = URL(string: urlString) {
-                return UIApplication.shared.canOpenURL(url)
-            }
+        guard let url = urlString else {return false}
+        
+        if let urlComponents = URLComponents.init(string: url), urlComponents.host != nil, urlComponents.url != nil
+        {
+            return true
         }
         return false
     }
-   
-    /**
-     Prevent memory leaks
-     */
+    
     func clearMemory(){
         timer?.invalidate()
         timer = nil
@@ -297,10 +278,6 @@ class NotificationView: UIView {
 
 //GESTURES
 extension NotificationView {
-   
-    /**
-     Handle the gesture inside the notificationView which allows the view's resizing in function of the image size
-     */
     @objc func panGestureHandler(_ gestureRecognizer: UIPanGestureRecognizer) {
         self.layoutIfNeeded()
         swipBarView.isHidden=true
@@ -373,20 +350,13 @@ extension NotificationView {
         gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self)
     }
     
-   
-    /**
-     Tap gesture to notify the delegate
-     */
     @objc func tapGestureHandler(_ gestureRecognizer: UIPanGestureRecognizer) {
         clearMemory()
         delegate?.notificationTapped(notification: notification)
         dismissNotification()
     }
     
-    /**
-     Dismiss notification caused by swipeGesture
-     */
-    @objc func swipeGestureHandler(_ gestureRecognizer: UISwipeGestureRecognizer){
+    @objc func swipGestureHandler(_ gestureRecognizer: UISwipeGestureRecognizer){
         clearMemory()
         dismissNotification()
     }
