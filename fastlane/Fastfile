@@ -1,8 +1,9 @@
 lane :to_ci do |options|
   #scan
   pod_lib_lint
+  increment_build_number
   if git_branch() == "master"
-    if options[:release] and options[:bump_type]
+    if options[:release] == true and options[:bump_type] == "patch"
         new_github_release(bump_type: options[:bump_type])
         pod_push
     end
