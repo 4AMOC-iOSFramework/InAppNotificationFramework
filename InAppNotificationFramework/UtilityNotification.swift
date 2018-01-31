@@ -10,6 +10,9 @@ import UIKit
 
 extension UIImageView {
     
+    /**
+     Download image without blocking UI
+     */
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         
         contentMode = mode
