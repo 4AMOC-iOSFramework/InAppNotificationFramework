@@ -23,16 +23,8 @@ before_install:
 - gem install bundler
 - bundle install
 
-#deploy:
-#  provider: releases
-#  skip_cleanup: true
-#  github-token: "$GITHUB_API_TOKEN"
-#  on:
-#    tags: true
-#  verbose: true
-
-#script: bundle exec fastlane to_ci
-script: bundle exec fastlane to_ci release:true bump_type:patch
+script: bundle exec fastlane to_ci
+#script: bundle exec fastlane to_ci release:true bump_type:patch
 
 env:
   global:
