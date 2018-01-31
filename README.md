@@ -6,6 +6,7 @@
 [![GitHub language count](https://img.shields.io/github/languages/count/badges/InAppNotificationFramework.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/p/InAppNotificationFramework.svg)]()
 
+<<<<<<< HEAD
 
 Easy to use InApp notification framework written in Swift 4
 
@@ -16,6 +17,23 @@ Easy to use InApp notification framework written in Swift 4
 
 <<<<<<< HEAD
 =======
+=======
+InAppNotificationFramework is library written in Swift 4 which handle the creation of a notification inside an iOS application.
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Credits](#credits)
+
+## Features
+
+- [x] Handle notifications Data In app
+- [x] Handle notifications View In app
+- [x] Handle notifications Animations In app
+
+
+>>>>>>> 59534cddb80f2dc2a97c438b5879feb3226afc92
 ## Requirements
 - iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
 - Xcode 8.3+
@@ -89,7 +107,10 @@ $ git submodule add https://github.com/4AMOC-iOSFramework/InAppNotificationFrame
 > The `InAppNotificationFramework.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
 
 ## Utilisation
+<<<<<<< HEAD
 >>>>>>> Readme pods line fixed
+=======
+>>>>>>> 59534cddb80f2dc2a97c438b5879feb3226afc92
 First you'll need to create one or many Notification Data object.
 This object contains the notifications data like:
 Title,
@@ -124,6 +145,7 @@ The NotificationData object will be in the Notification.object property. Just ca
 ```swift
 @objc func notificationsHandler(notif: Notification) {
 
+<<<<<<< HEAD
     if let notification = notif.object as? NotificationData {
         print(notification)
     }
@@ -181,4 +203,16 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 
 
+=======
+if let notification = notif.object as? NotificationData {
+print(notification)
+}
+}
+```
+## Credits
+
+* **Henri Gil** - [hgxl](https://github.com/hgxl)
+* **Fodé Guirassy** - [fodeguirassy](https://github.com/fodeguirassy)
+* **Ismaël Diallo** - [ismadia09](https://github.com/ismadia09)
+>>>>>>> 59534cddb80f2dc2a97c438b5879feb3226afc92
 
