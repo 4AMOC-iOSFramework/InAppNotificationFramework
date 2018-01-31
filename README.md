@@ -44,7 +44,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'InAppNotificationFramework.'
+pod 'InAppNotificationFramework'
 end
 ```
 
@@ -52,6 +52,12 @@ Then, run the following command:
 
 ```bash
 $ pod install
+```
+
+Please if you cannot find our framework run the following command:
+
+```bash
+$ pod repo update master
 ```
 
 #### Embedded Framework
