@@ -17,13 +17,13 @@ extension Int {
 }
 
 
-enum InAppNotificationAnimation: String {
+public enum InAppNotificationAnimation: String {
     case left = "left"
     case right = "right"
     case top = "top"
 }
 
-class InAppNotification: NSObject {
+public class InAppNotification: NSObject {
     
     var notificationStack: [NotificationData] = []
     var isNotificationVisible: Bool = false
@@ -32,24 +32,25 @@ class InAppNotification: NSObject {
     var notificationLeftConstraint: NSLayoutConstraint?
     var notificationRightConstraint: NSLayoutConstraint?
     var notificationHeightConstraint: NSLayoutConstraint?
-    
-    static let shared = InAppNotification()
+    var notificationView: NotificationView?
+
+    public static let shared = InAppNotification()
     
     private override init() {}
     
-    func addNotification(notification: NotificationData){
+    public func addNotification(notification: NotificationData){
         notificationStack.append(notification)
         handleQueue()
     }
     
-    func addNotifications(notifications: [NotificationData]){
+    public func addNotifications(notifications: [NotificationData]){
         for notif in notifications {
             notificationStack.append(notif)
         }
         handleQueue()
     }
     
-    func handleQueue(){
+    private func handleQueue(){
         
         if let notif = notificationStack.first {
             displayNotification(notification: notif)
@@ -57,7 +58,6 @@ class InAppNotification: NSObject {
         }
     }
     
-    var notificationView: NotificationView?
     
     private func displayNotification(notification: NotificationData){
         
@@ -114,11 +114,11 @@ class InAppNotification: NSObject {
 }
 
 extension InAppNotification: NotificationViewDelegate{
-    func notificationTapped(notification: NotificationData) {
+   internal func notificationTapped(notification: NotificationData) {
         NotificationCenter.default.post(name: Notification.Name("notificationTapped"), object: notification)
     }
     
-    func notificationDismissed() {
+    internal func notificationDismissed() {
         isNotificationVisible = false
         notificationView?.removeFromSuperview()
         notificationView?.delegate = nil
