@@ -5,17 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: increment_version_number" time="0.775377">
+      <testcase classname="fastlane.lanes" name="0: increment_version_number" time="0.856512">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: get_version_number" time="0.384373">
+      <testcase classname="fastlane.lanes" name="1: get_version_number" time="0.431142">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: version_bump_podspec" time="0.007219">
+      <testcase classname="fastlane.lanes" name="2: version_bump_podspec" time="0.017824">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: slack" time="2.448736">
         
       </testcase>
     
