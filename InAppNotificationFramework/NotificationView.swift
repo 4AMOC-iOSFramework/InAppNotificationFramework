@@ -13,9 +13,12 @@ protocol NotificationViewDelegate: class {
     func notificationTapped(notification: NotificationData)
 }
 
+/**
+ Creation of the notification view
+ */
 class NotificationView: UIView {
     
-    
+    //Get the data to display in the notifation view
     var notification = NotificationData() {
         didSet{
             
@@ -129,6 +132,10 @@ class NotificationView: UIView {
         setupLayout()
     }
     
+    /**
+     Initialize the view which will contain the data to display and gesture available on the notification view
+     */
+    
     func initialize(){
         
         panGesture.addTarget(self, action: #selector(panGestureHandler))
@@ -152,6 +159,10 @@ class NotificationView: UIView {
         swipBarContenairView.addSubview(swipBarView)
         notificationContent.addSubview(contentImage)
     }
+    
+    /**
+     Set up the notification Layout
+     */
     
     func setupLayout(){
         
@@ -198,6 +209,9 @@ class NotificationView: UIView {
         
     }
     
+    /**
+     Animate the notitication and call the delegate for the dismiss
+     */
     @objc func dismissNotification(){
         
         guard isDismissing == false else {return}
@@ -215,7 +229,9 @@ class NotificationView: UIView {
         }
     }
     
-    
+    /**
+     Set image content from internet
+     */
     func setImageContent(named: String){
         isImageContent = true
         contentImage.isHidden = false
@@ -240,7 +256,9 @@ class NotificationView: UIView {
     }
     
     
-    
+    /**
+     Verifies if the notification view isTapped to activate the gestures
+     */
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if notificationContent.frame.contains(point) == true {
             print("tap real")
@@ -259,6 +277,9 @@ class NotificationView: UIView {
         return false
     }
     
+    /**
+     Prevent memory leaks
+     */
     func clearMemory(){
         timer?.invalidate()
         timer = nil
@@ -277,6 +298,9 @@ class NotificationView: UIView {
 
 //GESTURES
 extension NotificationView {
+    /**
+     Handle the gesture inside the notificationView which allows the view's resizing in function of the image size
+     */
     @objc func panGestureHandler(_ gestureRecognizer: UIPanGestureRecognizer) {
         self.layoutIfNeeded()
         swipBarView.isHidden=true
@@ -349,12 +373,18 @@ extension NotificationView {
         gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self)
     }
     
+    /**
+     Tap gesture to notify the delegate
+     */
     @objc func tapGestureHandler(_ gestureRecognizer: UIPanGestureRecognizer) {
         clearMemory()
         delegate?.notificationTapped(notification: notification)
         dismissNotification()
     }
     
+    /**
+     Dismiss notification caused by swipeGesture
+     */
     @objc func swipGestureHandler(_ gestureRecognizer: UISwipeGestureRecognizer){
         clearMemory()
         dismissNotification()
