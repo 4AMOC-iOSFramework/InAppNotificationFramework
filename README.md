@@ -4,6 +4,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/dt/InAppNotificationFramework.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/l/InAppNotificationFramework.svg)]()
 [![GitHub language count](https://img.shields.io/github/languages/count/badges/InAppNotificationFramework.svg)]()
+[![GitHub release](https://img.shields.io/github/release/qubyte/InAppNotificationFramework.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/p/InAppNotificationFramework.svg)]()
 
 InAppNotificationFramework is library written in Swift 4 which handle the creation of a notification inside an iOS application.

@@ -25,6 +25,11 @@ fastlane to_ci
 fastlane new_github_release
 ```
 
+### twit_it
+```
+fastlane twit_it
+```
+
 ### beta_deploy
 ```
 fastlane beta_deploy

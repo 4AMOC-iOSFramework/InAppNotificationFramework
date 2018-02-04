@@ -1,10 +1,11 @@
 lane :to_ci do |options|
-  #scan
+  scan
   pod_lib_lint
   if git_branch() == "master"
     if options[:release] == true and options[:bump_type] == "patch"
         new_github_release(bump_type: options[:bump_type])
         pod_push
+        twit_it
     end
   end
 end
@@ -22,7 +23,16 @@ lane :new_github_release do |options|
     name:get_version_number,
     description: "Testing Continuous delivery"
   )
+end
 
+lane :twit_it do
+  twitter(
+    access_token: "960159270812647425-3LNJnsSw6fDN1xD4VkIJ1CBGbRz19KX",
+    access_token_secret:"uMf8ivUcxnRd71ktq0GAIfOaZfT0duf5BtuIFBSptHr7k",
+    consumer_key:"hkyJLkPcPG5t8J0ngFNidai0u",
+    consumer_secret: "hViUubx1HNmnwPkcCu4Z8fueKlpgZAs2IwJ7U6gRRVJkmkNMXl",
+    message:"InAppNotificationFramework tests has succesfully passed"
+  )
 end
 
 lane :beta_deploy do
