@@ -269,10 +269,11 @@ class NotificationView: UIView {
     }
     
     func isUrl(urlString: String?) -> Bool {
-        if let urlString = urlString {
-            if let url = URL(string: urlString) {
-                return UIApplication.shared.canOpenURL(url)
-            }
+        guard let url = urlString else {return false}
+        
+        if let urlComponents = URLComponents.init(string: url), urlComponents.host != nil, urlComponents.url != nil
+        {
+            return true
         }
         return false
     }
