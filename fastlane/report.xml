@@ -5,17 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: scan" time="18.787446">
+      <testcase classname="fastlane.lanes" name="0: scan" time="12.845063">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: Switch to twit_it lane" time="0.001372">
+      <testcase classname="fastlane.lanes" name="1: pod_lib_lint" time="14.453376">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: twitter" time="12.757557">
+      <testcase classname="fastlane.lanes" name="2: slack" time="17.800843">
         
       </testcase>
     

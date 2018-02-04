@@ -1,5 +1,5 @@
 lane :to_ci do |options|
-  scan
+  scan(devices: ["iPhone 8 (11.2)"])
   pod_lib_lint
   if git_branch() == "master"
     if options[:release] == true and options[:bump_type] == "patch"
@@ -31,7 +31,7 @@ lane :twit_it do
     access_token_secret:"uMf8ivUcxnRd71ktq0GAIfOaZfT0duf5BtuIFBSptHr7k",
     consumer_key:"hkyJLkPcPG5t8J0ngFNidai0u",
     consumer_secret: "hViUubx1HNmnwPkcCu4Z8fueKlpgZAs2IwJ7U6gRRVJkmkNMXl",
-    message:"InAppNotificationFramework tests has succesfully passed"
+    message:"InAppNotificationFramework v" + get_version_number + " has been released \n"
   )
 end
 
