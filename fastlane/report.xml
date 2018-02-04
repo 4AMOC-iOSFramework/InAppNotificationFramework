@@ -5,17 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: scan" time="18.777629">
+      <testcase classname="fastlane.lanes" name="0: increment_version_number" time="0.775377">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: pod_lib_lint" time="12.993109">
+      <testcase classname="fastlane.lanes" name="1: get_version_number" time="0.384373">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: slack" time="14.244394">
+      <testcase classname="fastlane.lanes" name="2: version_bump_podspec" time="0.007219">
         
       </testcase>
     
