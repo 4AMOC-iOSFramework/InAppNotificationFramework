@@ -15,13 +15,13 @@ lane :new_github_release do |options|
   increment_version_number(bump_type: options[:bump_type])
   version_bump_podspec(path: 'InAppNotificationFramework.podspec',
     version_number: get_version_number)
- #set_github_release(
-  #  repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
-  #  api_token: ENV["GITHUB_API_TOKEN"],
-  #  tag_name: get_version_number,
-  #  commitish: 'master',
-  #  name:get_version_number,
-  #  description: "Testing Continuous delivery")
+ set_github_release(
+    repository_name:"4AMOC-iOSFramework/InAppNotificationFramework",
+    api_token: ENV["GITHUB_API_TOKEN"],
+    tag_name: get_version_number,
+    commitish: 'master',
+    name:get_version_number,
+    description: "Testing Continuous delivery")
 end
 
 lane :twit_it do
