@@ -20,12 +20,12 @@ class InAppNotificationFrameworkTests: XCTestCase {
     
     func test_http_isUrl(){
         let b = notificationView.isUrl(urlString: "http://facebook.com")
-        XCTAssertEqual(b, true)
+        XCTAssertEqual(b, false)
     }
     
     func test_https_isUrl(){
         let b = notificationView.isUrl(urlString: "https://facebook.com")
-        XCTAssertEqual(b, true)
+        XCTAssertEqual(b, false)
     }
     
     func test_empty_isUrl(){
