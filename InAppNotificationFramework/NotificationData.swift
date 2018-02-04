@@ -8,14 +8,17 @@
 
 import UIKit
 
-class NotificationData: NSObject {
+public class NotificationData: NSObject {
     
-    var id: String = ""
-    var title: String = ""
-    var message: String = ""
-    var thumbnailUrl: String = ""
-    var contentImage: String = ""
-    var animationStyle: InAppNotificationAnimation = .top
-    var delay: Int = 0
+    public var id: String = ""
+    public var title: String = ""
+    public var message: String = ""
+    public var thumbnailUrl: String = ""
+    public var contentImage: String = ""
+    public var animationStyle: InAppNotificationAnimation = .top
+    public var delay: Int = 0
+    
+    public override init() {}
+
 }
 
