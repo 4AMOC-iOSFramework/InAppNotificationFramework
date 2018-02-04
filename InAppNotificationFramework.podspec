@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors = { '4A MOC Dream Team' => 'fodeguipro@gmail.com' }
   s.source = { :git => 'https://github.com/4AMOC-iOSFramework/InAppNotificationFramework.git', :tag => s.version }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
   s.source_files = 'InAppNotificationFramework/*.swift'
 
 end
